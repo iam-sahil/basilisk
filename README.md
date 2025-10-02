@@ -54,7 +54,7 @@
 Run Basilisk directly from GitHub with a single command:
 
 ```powershell
-iex (irm https://raw.githubusercontent.com/ctrlcat0x/basilisk/master/run.ps1)
+iex (irm https://raw.githubusercontent.com/iam-sahil/basilisk/master/run.ps1)
 ```
 
 **This command will automatically:**
@@ -64,7 +64,7 @@ iex (irm https://raw.githubusercontent.com/ctrlcat0x/basilisk/master/run.ps1)
 
 ### Pre-built Binary (Recommended)
 
-1. Download the latest version from [GitHub Releases](https://github.com/ctrlcat0x/basilisk/releases)
+1. Download the latest version from [GitHub Releases](https://github.com/iam-sahil/basilisk/releases)
 2. Temporarily whitelist your C: drive in Windows Defender
 3. **Run as Administrator**
 
@@ -260,5 +260,5 @@ The developers are not responsible for any data loss or system issues that may o
 ---
 
 <p align="center">
-  <strong>Made with ❤️ by ctrlcat0x</strong>
-</p> 
+  <strong>Made with ❤️ by iam-sahil</strong>
+</p>

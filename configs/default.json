@@ -1,0 +1,41 @@
+﻿{
+    "WPFFeature": [
+        "WPFFeatureDisableSearchSuggestions"
+    ],
+    "WPFTweaks": [
+        "WPFTweaksWifi",
+        "WPFTweaksHome",
+        "WPFTweaksRemoveEdge",
+        "WPFTweaksRemoveHomeGallery",
+        "WPFTweaksDisableLMS1",
+        "WPFTweaksIPv46",
+        "WPFTweaksDeBloat",
+        "WPFTweaksConsumerFeatures",
+        "WPFTweaksTele",
+        "WPFTweaksAH",
+        "WPFTweaksRightClickMenu",
+        "WPFTweaksRemoveCopilot",
+        "WPFTweaksLoc",
+        "WPFTweaksRemoveOnedrive",
+        "WPFTweaksServices",
+        "WPFTweaksRecallOff",
+        "WPFTweaksDisableBGapps",
+        "WPFTweaksPower",
+        "WPFTweaksTaskbar",
+        "WPFTweaksStartMenu",
+        "WPFTweaksPowershell7Tele",
+        "WPFTweaksDisableExplorerAutoDiscovery",
+        "WPFTweaksEdgeDebloat",
+        "WPFTweaksStorage",
+        "WPFTweaksDeleteTempFiles",
+        "WPFTweaksDVR",
+        "WPFTweaksEndTaskOnTaskbar",
+        "WPFToggleBingSearch",
+        "WPFToggleStartMenuRecommendations",
+        "WPFToggleHideSettingsHome",
+        "WPFToggleMouseAcceleration",
+        "WPFToggleStickyKeys",
+        "WPFToggleDetailedBSoD",
+        "WPFAddUltPerf"
+    ]
+}
