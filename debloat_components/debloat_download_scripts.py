@@ -14,13 +14,13 @@ SCRIPTS = [
     "dry_run_test.ps1"
 ]
 SCRIPTS_DIR = os.path.join(tempfile.gettempdir(), 'basilisk')
-GITHUB_RAW_URL = f"https://raw.githubusercontent.com/ctrlcat0x/basilisk/master/scripts/"
+GITHUB_RAW_URL = f"https://raw.githubusercontent.com/iam-sahil/basilisk/master/scripts/"
 
 MEDIA_FILES = [
     "background.png",
 ]
 MEDIA_DIR = os.path.join(tempfile.gettempdir(), 'basilisk', 'media')
-GITHUB_MEDIA_URL = "https://raw.githubusercontent.com/ctrlcat0x/basilisk/master/media/"
+GITHUB_MEDIA_URL = "https://raw.githubusercontent.com/iam-sahil/basilisk/master/media/"
 
 def main():
     for script in SCRIPTS:

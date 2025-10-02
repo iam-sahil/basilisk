@@ -4,7 +4,6 @@
   <img src="banner.png" alt="Basilisk Banner" width="800">
 </p>
 
-
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -55,11 +54,11 @@
 ### Compatibility Matrix
 
 | Windows Version | Home | Pro | Enterprise | Education |
-|----------------|------|-----|------------|-----------|
-| Windows 11 22H2 | ✅ | ✅ | ✅ | ✅ |
-| Windows 11 23H2 | ✅ | ✅ | ✅ | ✅ |
-| Windows 11 24H2 | ✅ | ✅ | ✅ | ✅ |
-| Windows 10 | ❌ | ❌ | ❌ | ❌ |
+| --------------- | ---- | --- | ---------- | --------- |
+| Windows 11 22H2 | ✅   | ✅  | ✅         | ✅        |
+| Windows 11 23H2 | ✅   | ✅  | ✅         | ✅        |
+| Windows 11 24H2 | ✅   | ✅  | ✅         | ✅        |
+| Windows 10      | ❌   | ❌  | ❌         | ❌        |
 
 ### Development Requirements
 
@@ -141,6 +140,7 @@ python basilisk.py --skip-apply-background-step
 Provides the main window framework with overlay capabilities.
 
 **Features:**
+
 - Full-screen overlay during installation
 - Progress tracking display
 - Error message handling
@@ -162,16 +162,19 @@ Provides the main window framework with overlay capabilities.
 #### System Validation
 
 **Admin Check** (`util_admin_check.py`)
+
 - Validates administrator privileges
 - Prevents execution without proper permissions
 - Provides clear error messages
 
 **Windows Check** (`util_windows_check.py`)
+
 - Validates Windows 11 Home/Pro compatibility
 - Checks system architecture (x64)
 - Verifies minimum Windows version
 
 **Defender Check** (`util_defender_check.py`)
+
 - Manages Windows Defender settings
 - Handles real-time protection conflicts
 - Provides guidance for temporary disabling
@@ -179,29 +182,34 @@ Provides the main window framework with overlay capabilities.
 #### Core Utilities
 
 **Logger** (`util_logger.py`)
+
 - Comprehensive logging system with multiple levels
 - File-based logging in `%TEMP%\basilisk\`
 - Structured log format with timestamps
 - Log rotation and cleanup
 
 **Error Handling** (`util_error_popup.py`)
+
 - User-friendly error displays
 - Detailed error information for debugging
 - Graceful error recovery
 
 **PowerShell Handler** (`util_powershell_handler.py`)
+
 - Secure PowerShell script execution
 - Output capture and parsing
 - Error handling for script failures
 - Execution policy management
 
 **Registry Modifier** (`util_modify_registry.py`)
+
 - Safe registry operations with validation
 - Backup creation before modifications
 - Rollback capabilities
 - Error handling for registry access issues
 
 **Download Handler** (`util_download_handler.py`)
+
 - Secure file downloads with SSL verification
 - Progress tracking for large files
 - Retry logic for failed downloads
@@ -210,12 +218,14 @@ Provides the main window framework with overlay capabilities.
 #### Threading and Security
 
 **Thread Handler** (`util_debloat_thread_handler.py`)
+
 - Background process management
 - UI thread safety
 - Progress reporting
 - Cancellation support
 
 **SSL Context** (`util_ssl.py`)
+
 - Secure connection handling
 - Certificate validation
 - TLS configuration
@@ -230,17 +240,20 @@ Provides the main window framework with overlay capabilities.
 **Purpose**: Downloads required PowerShell scripts from GitHub servers.
 
 **Scripts Downloaded:**
+
 - `edge_vanisher.ps1`: Removes Microsoft Edge browser
 - `uninstall_oo.ps1`: Removes Office Online components
 - `update_policy_changer.ps1`: Configures update policies for Home edition
 - `update_policy_changer_pro.ps1`: Configures update policies for Pro/Enterprise
 
 **Windows Effects:**
+
 - No immediate system changes
 - Prepares required tools for subsequent steps
 - Creates temporary directory structure
 
 **Technical Details:**
+
 - Downloads from GitHub raw content URLs
 - Validates file integrity with checksums
 - Handles network timeouts and retries
@@ -251,10 +264,12 @@ Provides the main window framework with overlay capabilities.
 **Purpose**: Runs custom scripts for Edge removal and Office Online cleanup.
 
 **Scripts Executed:**
+
 - `edge_vanisher.ps1`: Comprehensive Edge browser removal
 - `uninstall_oo.ps1`: Office Online component cleanup
 
 **Windows Effects:**
+
 - **Edge Browser**: Complete removal including:
   - Application files and registry entries
   - Scheduled tasks and services
@@ -266,6 +281,7 @@ Provides the main window framework with overlay capabilities.
   - Office Online registry entries
 
 **Technical Details:**
+
 - Executes scripts with elevated privileges
 - Captures and logs all output
 - Handles script execution errors
@@ -276,10 +292,12 @@ Provides the main window framework with overlay capabilities.
 **Purpose**: Runs third-party debloating tools for comprehensive system optimization.
 
 **Tools Used:**
+
 - **ChrisTitusTech WinUtil**: Comprehensive Windows optimization
 - **Raphi Win11Debloat**: Additional debloating and customization
 
 **Windows Effects:**
+
 - **System Services**: Disables unnecessary services
 - **UWP Apps**: Removes pre-installed applications
 - **Privacy Settings**: Configures privacy options
@@ -287,6 +305,7 @@ Provides the main window framework with overlay capabilities.
 - **Visual Customizations**: Applies UI improvements
 
 **Technical Details:**
+
 - Downloads and executes external tools
 - Applies custom configurations
 - Handles tool-specific requirements
@@ -297,6 +316,7 @@ Provides the main window framework with overlay capabilities.
 **Purpose**: Installs essential apps directly using winget with admin rights.
 
 **Apps Installed by Default:**
+
 - Microsoft.WindowsTerminal
 - Brave.Brave
 - 7zip.7zip
@@ -311,6 +331,7 @@ Provides the main window framework with overlay capabilities.
 (You can customize this list in the code.)
 
 **Technical Details:**
+
 - Uses PowerShell with elevation to ensure all installs succeed
 - Logs all install attempts and errors
 
@@ -319,10 +340,12 @@ Provides the main window framework with overlay capabilities.
 **Purpose**: Applies advanced system tweaks for performance, privacy, and user experience.
 
 **New Tweaks Added:**
+
 - **Start Menu Tweaks**: Disables "Show recently added apps" (`Start_TrackProgs = 0`) and "Show recommended files" (`Start_TrackDocs = 0`) in Start Menu for privacy and a cleaner look.
 - **Accent Color Tweaks**: Enables accent color on Start, taskbar, title bars, and window borders (`ColorPrevalence = 1` in two locations), and sets the accent color to the darkest possible value (`AccentColor = 0xFF000000`).
 
 **Registry Modifications:**
+
 ```registry
 # Start Menu Tweaks
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
@@ -338,6 +361,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM
 ```
 
 **Windows Effects:**
+
 - **Start Menu**: No recently added apps or recommended files shown
 - **Accent Color**: Accent color enabled on Start, taskbar, title bars, and window borders, with the darkest possible color applied
 
@@ -346,24 +370,28 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM
 **Purpose**: Configures Windows Update policies based on system edition.
 
 **Edition Detection:**
+
 - **Home Edition**: Uses `update_policy_changer.ps1`
 - **Pro/Enterprise**: Uses `update_policy_changer_pro.ps1`
 
 **Update Policies:**
 
 #### Home Edition
+
 - **Automatic Updates**: Configured for security-only updates
 - **Feature Updates**: Manual installation required
 - **Driver Updates**: Automatic installation
 - **Quality Updates**: Automatic installation
 
 #### Pro/Enterprise Edition
+
 - **Group Policy**: Configures update policies via Group Policy
 - **Deferral**: Allows update deferral for testing
 - **Branch Selection**: Configures update branch selection
 - **Restart Policies**: Configures automatic restart policies
 
 **Windows Effects:**
+
 - **Update Control**: Better control over system updates
 - **Stability**: Reduced risk of problematic updates
 - **Security**: Maintains security while controlling feature updates
@@ -373,11 +401,13 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM
 **Purpose**: Sets custom desktop wallpaper and performs cleanup.
 
 **Actions Performed:**
+
 - **Wallpaper**: Sets `background.jpg` as desktop wallpaper
 - **Cleanup**: Removes temporary files and system cache
 - **Finalization**: Completes the debloating process
 
 **Windows Effects:**
+
 - **Visual**: Custom desktop background applied
 - **Storage**: Temporary files cleaned up
 - **Performance**: System cache optimized
@@ -440,12 +470,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Performance Improvements
 
 #### Before Basilisk
+
 - **Startup Time**: 45-60 seconds
 - **Memory Usage**: 3-4GB typical
 - **CPU Usage**: 15-25% idle
 - **Disk Space**: 20-30GB system files
 
 #### After Basilisk
+
 - **Startup Time**: 20-30 seconds (40-50% improvement)
 - **Memory Usage**: 1.5-2.5GB typical (30-40% reduction)
 - **CPU Usage**: 5-10% idle (50-60% reduction)
@@ -454,12 +486,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Privacy Enhancements
 
 #### Telemetry Reduction
+
 - **Data Collection**: Reduced by 90%
 - **Diagnostic Data**: Minimal collection only
 - **Usage Statistics**: Disabled
 - **Advertising ID**: Disabled
 
 #### Privacy Settings
+
 - **Location Services**: Disabled
 - **Camera Access**: Restricted
 - **Microphone Access**: Restricted
@@ -468,11 +502,13 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Security Improvements
 
 #### Windows Defender
+
 - **Real-time Protection**: **PRESERVED** - Windows Defender remains fully functional
 - **Scan Frequency**: **PRESERVED** - Default scan settings maintained
 - **Exclusions**: **PRESERVED** - No exclusions added for safety
 
 #### System Hardening
+
 - **Unnecessary Services**: Disabled
 - **Network Protocols**: Optimized
 - **File System**: Enhanced security
@@ -481,12 +517,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### User Experience Changes
 
 #### Visual Improvements
+
 - **Taskbar**: Left-aligned (classic Windows style)
 - **Theme**: Dark mode enforced
 - **Animations**: Optimized for performance
 - **File Explorer**: Enhanced with visible extensions
 
 #### Functionality Changes
+
 - **Edge Browser**: Completely removed
 - **Office Online**: Removed
 - **UWP Apps**: Most pre-installed apps removed
@@ -503,12 +541,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Pre-Installation Safety Measures
 
 1. **System Validation**
+
    - Windows version compatibility check
    - Architecture validation (x64 only)
    - Administrator privileges verification
    - Available disk space check
 
 2. **Restore Point Creation**
+
    - Automatic system restore point before any changes
    - Named "Basilisk Debloat - [Timestamp]"
    - Includes all system settings and registry
@@ -521,12 +561,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Error Recovery
 
 #### Automatic Recovery
+
 - **Step Failure**: Automatic rollback of failed step
 - **Registry Errors**: Restore from backup
 - **Script Failures**: Continue with remaining steps
 - **System Errors**: Graceful degradation
 
 #### Manual Recovery
+
 - **System Restore**: Use created restore point
 - **Registry Restore**: Manual registry restoration
 - **Clean Installation**: Fresh Windows installation
@@ -534,12 +576,14 @@ Applications are installed using **WinGet** (Windows Package Manager) as the pri
 ### Rollback Procedures
 
 #### Complete Rollback
+
 ```powershell
 # Restore system to pre-Basilisk state
 Restore-Computer -RestorePoint "Basilisk Debloat - [Timestamp]"
 ```
 
 #### Partial Rollback
+
 ```powershell
 # Restore specific registry keys
 reg import "backup\registry_backup.reg"
@@ -559,18 +603,22 @@ reg import "backup\registry_backup.reg"
 ### Common Issues & Solutions
 
 #### Issue: "Access Denied" Errors
+
 **Cause**: Insufficient administrator privileges
 **Solution**: Run as Administrator
 
 #### Issue: Script Execution Policy
+
 **Cause**: PowerShell execution policy restrictions
 **Solution**: Basilisk automatically sets execution policy
 
 #### Issue: Windows Defender Blocking
+
 **Cause**: Real-time protection interfering
 **Solution**: Temporarily disable real-time protection
 
 #### Issue: Network Download Failures
+
 **Cause**: Network connectivity or firewall issues
 **Solution**: Check internet connection and firewall settings
 
@@ -583,6 +631,7 @@ python basilisk.py --developer-mode --debug
 ```
 
 Debug mode provides:
+
 - Verbose logging
 - Step-by-step execution details
 - Registry modification details
@@ -607,12 +656,14 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4657} | Where-Object {$_.
 ### Development Environment Setup
 
 1. **Clone Repository**
+
    ```bash
-   git clone https://github.com/ctrlcat0x/basilisk.git
+   git clone https://github.com/iam-sahil/basilisk.git
    cd basilisk
    ```
 
 2. **Install Dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -625,12 +676,14 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4657} | Where-Object {$_.
 ### Code Structure Guidelines
 
 #### Python Standards
+
 - **Type Hints**: Use type annotations for all functions
 - **Docstrings**: Comprehensive docstrings for all classes and functions
 - **Error Handling**: Use try-except blocks with specific exception types
 - **Logging**: Use structured logging with appropriate levels
 
 #### File Organization
+
 ```
 basilisk/
 ├── basilisk.py                 # Main entry point
@@ -655,6 +708,7 @@ basilisk/
 ### Testing Guidelines
 
 #### Unit Testing
+
 ```python
 import unittest
 from unittest.mock import patch, MagicMock
@@ -663,7 +717,7 @@ class TestDebloatComponent(unittest.TestCase):
     def setUp(self):
         # Setup test environment
         pass
-    
+
     @patch('subprocess.run')
     def test_powershell_execution(self, mock_run):
         # Test PowerShell script execution
@@ -673,6 +727,7 @@ class TestDebloatComponent(unittest.TestCase):
 ```
 
 #### Integration Testing
+
 - Test complete 7-step process
 - Validate system changes
 - Verify rollback functionality
@@ -681,11 +736,13 @@ class TestDebloatComponent(unittest.TestCase):
 ### Building the Application
 
 #### Prerequisites
+
 - Python 3.12.4+
 - Nuitka compiler
 - PyQt5 development files
 
 #### Build Process
+
 ```bash
 # Run build script
 build.bat
@@ -695,6 +752,7 @@ python -m nuitka --standalone --onefile --windows-icon-from-ico=media/icon.ico b
 ```
 
 #### Build Output
+
 - **Executable**: `basilisk.exe`
 - **Size**: ~50-100MB (depending on dependencies)
 - **Dependencies**: All bundled in single executable
@@ -722,6 +780,7 @@ python -m nuitka --standalone --onefile --windows-icon-from-ico=media/icon.ico b
 ### Development Workflow
 
 #### Feature Development
+
 ```bash
 # Create feature branch
 git checkout -b feature/new-debloat-step
@@ -738,6 +797,7 @@ git push origin feature/new-debloat-step
 ```
 
 #### Bug Fixes
+
 ```bash
 # Create bug fix branch
 git checkout -b fix/registry-modification-error
@@ -754,12 +814,14 @@ git push origin fix/registry-modification-error
 ### Testing Requirements
 
 #### Automated Testing
+
 - Unit tests for all components
 - Integration tests for complete workflow
 - Performance benchmarks
 - Security vulnerability scanning
 
 #### Manual Testing
+
 - Windows 11 Home edition testing
 - Windows 11 Pro edition testing
 - Virtual machine testing
@@ -778,16 +840,20 @@ This project is licensed under the BSD-3-Clause License. See the [license file](
 ### Legal Considerations
 
 #### Disclaimer
+
 This tool modifies system settings and registry values. While designed to be safe, it's recommended to:
+
 - Use on fresh Windows 11 installations
 - Test in a virtual environment first
 - Understand that some modifications may affect system functionality
 - Create backups before use
 
 #### Liability
+
 The developers are not responsible for any data loss or system issues that may occur from using this tool.
 
 #### Compliance
+
 - **Windows License**: Respects Windows licensing terms
 - **Privacy Laws**: Complies with data protection regulations
 - **Open Source**: Follows open source licensing requirements
@@ -795,11 +861,13 @@ The developers are not responsible for any data loss or system issues that may o
 ### Third-Party Licenses
 
 #### External Tools
+
 - **ChrisTitusTech WinUtil**: MIT License
 - **Raphi Win11Debloat**: MIT License
 - **PowerShell Scripts**: Custom licenses
 
 #### Dependencies
+
 - **PyQt5**: GPL v3
 - **Nuitka**: Apache License 2.0
 - **Python**: PSF License
@@ -809,14 +877,17 @@ The developers are not responsible for any data loss or system issues that may o
 ## Acknowledgments
 
 ### Core Contributors
-- [ctrlcat0x](https://github.com/ctrlcat0x) - Project maintainer and lead developer
+
+- [iam-sahil](https://github.com/iam-sahil) - Project maintainer and lead developer
 
 ### External Tools & Scripts
+
 - [Raven Development Team](https://ravendevteam.org/)
 - [ChrisTitusTech](https://github.com/christitustech) - [CTT WinUtil](https://github.com/christitustech/winutil)
 - [Raphire](https://github.com/Raphire) - [Win11Debloat](https://github.com/Raphire/Win11Debloat)
 
 ### Community Contributors
+
 - [mre31](https://github.com/mre31)
 - [DTLegit](https://github.com/DTLegit)
 - [zombiehunternr1](https://github.com/zombiehunternr1)
@@ -835,12 +906,13 @@ The developers are not responsible for any data loss or system issues that may o
 - [Alandlt15](https://github.com/Alandlt15)
 
 ### Assets
+
 - [Icons by Icons8](https://icons8.com/)
 
 ---
 
 <p align="center">
-  <strong>Made with ❤️ by ctrlcat0x</strong>
+  <strong>Made with ❤️ by iam-sahil</strong>
 </p>
 
 <p align="center">

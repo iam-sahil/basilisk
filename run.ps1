@@ -14,7 +14,7 @@ if ($NoAutoRun) {
 }
 
 # Configuration
-$GitHubRepo = "ctrlcat0x/basilisk"
+$GitHubRepo = "iam-sahil/basilisk"
 $ApiUrl = "https://api.github.com/repos/$GitHubRepo/releases/latest"
 
 Write-Host "========================================" -ForegroundColor Cyan
